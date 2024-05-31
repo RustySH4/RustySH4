@@ -1,35 +1,39 @@
-#![allow(dead_code)]
-
-// TODO: Implement correct memory layout
-// TODO: Allow for diffrent memory sizes
-// TODO: Implement conditional display, because of it's size
-#[derive(Debug)]
-pub struct SH4Memory {
-    mem: [u8; 2048],
+pub struct MemoryBus {
+    memory: [u8; 65536],
 }
 
-impl Default for SH4Memory {
+impl Default for MemoryBus {
     fn default() -> Self {
-        SH4Memory { mem: [0; 2048] }
+        Self { memory: [0; 65536] }
     }
 }
 
-// TODO: Use Bytes create rather than direct access
-impl SH4Memory {
-    fn read8(&self, addr: usize) -> u8 {
-        self.mem[addr]
+impl MemoryBus {
+    pub fn read8(&self, addr: usize) -> Option<u8> {
+        Some(self.memory[addr])
     }
 
-    fn read16(&self, addr: usize) -> u16 {
-        // TODO: Endianess
-        ((self.mem[addr] as u16) << 8) + (self.mem[addr] as u16)
+    pub fn read16(&self, addr: usize) -> Option<[u8; 2]> {
+        if addr + 2 > self.memory.len() {
+            return None;
+        }
+
+        Some(self.memory[addr..(addr + 2)].try_into().unwrap())
     }
 
-    fn read32(&self, addr: usize) -> u32 {
-        // TODO: Endianess
-        ((self.mem[addr] as u32) << 24)
-            + ((self.mem[addr] as u32) << 18)
-            + ((self.mem[addr] as u32) << 16)
-            + (self.mem[addr] as u32)
+    pub fn read32(&self, addr: usize) -> Option<[u8; 4]> {
+        if addr + 4 > self.memory.len() {
+            return None;
+        }
+
+        Some(self.memory[addr..(addr + 4)].try_into().unwrap())
+    }
+
+    pub fn write8(&mut self, addr: usize, data: u8) {
+        self.memory[addr] = data;
+    }
+
+    pub fn write_bin(&mut self, addr: usize, data: Vec<u8>) {
+        self.memory[addr..(addr + data.len())].copy_from_slice(&data);
     }
 }

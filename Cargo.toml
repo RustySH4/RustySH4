@@ -1,6 +1,5 @@
 [workspace]
-members = [
-    "bin/*",
+members = [ "bin/RustySH4CLI",
     "lib/*"
 ]
 resolver = "2"

@@ -12,12 +12,7 @@ pub fn get_nth_cell_of_table(element: &ElementRef, cell_idx: usize) -> String {
 
 pub fn cleanup_register_names(inp: &str) -> String {
     // TODO: Replace :d with rust specific format lines
-    inp.replace("Rn", "R{n:d}")
-        .replace("Rm", "R{m:d}")
-        .replace("disp", "R{d:d}")
-        .replace("imm", "h'{i:04x}")
-        .replace('\t', " ")
-        .replace("&amp;", "&")
+    inp.to_string()
 }
 
 pub fn save_and_format(path_to_rs: PathBuf, tokens: rust::Tokens) -> Result<(), Error> {
