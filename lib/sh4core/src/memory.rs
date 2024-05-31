@@ -8,6 +8,7 @@ impl Default for MemoryBus {
     }
 }
 
+#[allow(unused)]
 impl MemoryBus {
     pub fn read8(&self, addr: usize) -> Option<u8> {
         Some(self.memory[addr])

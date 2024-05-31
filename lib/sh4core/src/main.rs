@@ -4,8 +4,9 @@ use cpu::CPU;
 extern crate lazy_static;
 
 mod cpu;
+mod cpu_impl;
 mod memory;
-mod opcodes_generated;
+mod opcodes;
 
 fn main() {
     let mut cpu = CPU::new();

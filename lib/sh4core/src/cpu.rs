@@ -1,10 +1,8 @@
 use std::fmt;
 
-use crate::{
-    memory::MemoryBus,
-    opcodes_generated::{OpCode, OpCodeArgs},
-};
+use crate::{memory::MemoryBus, opcodes::OpCode};
 
+#[allow(unused)]
 pub struct Registers {
     // TODO: Add BANK0 and BANK1 for privleage modes
     pub r: [u32; 16],
@@ -35,6 +33,7 @@ impl fmt::Display for Registers {
     }
 }
 
+#[allow(clippy::upper_case_acronyms)]
 #[derive(Default)]
 pub struct CPU {
     pub registers: Registers,
@@ -44,49 +43,6 @@ pub struct CPU {
 impl CPU {
     pub fn new() -> Self {
         Self::default()
-    }
-
-    fn sign_extend(x: u16) -> i32 {
-        if (x & 0x80) == 0 {
-            x as i32 & 0x000_000FF
-        } else {
-            x as i32 | 0xFFFF_FF00u32 as i32
-        }
-    }
-
-    fn usign_extend(x: u16) -> u32 {
-        if (x & 0x80) == 0 {
-            x as u32 & 0x000_000FF
-        } else {
-            x as u32 | 0xFFFF_FF00
-        }
-    }
-
-    fn MOV(&mut self, args: OpCodeArgs) {
-        self.registers.r[args.n as usize] = self.registers.r[args.m as usize];
-        self.registers.pc += 2;
-    }
-
-    fn ADD(&mut self, args: OpCodeArgs) {
-        self.registers.r[args.n as usize] += self.registers.r[args.m as usize];
-        self.registers.pc += 2
-    }
-
-    fn ADDI(&mut self, args: OpCodeArgs) {
-        self.registers.r[args.n as usize] += CPU::usign_extend(args.i);
-        self.registers.pc += 2;
-    }
-
-    pub fn execute(&mut self, opcode: OpCode) {
-        match opcode.id {
-            0 => self.MOV(opcode.args),
-            79 => self.ADD(opcode.args),
-            80 => self.ADDI(opcode.args),
-            _ => {
-                println!("UNIMPLEMENTED OPCODE: {:#?}", opcode);
-                todo!()
-            }
-        }
     }
 
     pub fn step(&mut self) {
