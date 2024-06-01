@@ -76,8 +76,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 1,
             display: "mov #imm,Rn".to_string(),
@@ -89,8 +88,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 4,
             display: "mova @(disp,PC),R0".to_string(),
@@ -102,8 +100,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 5,
             display: "mov.w @(disp,PC),Rn".to_string(),
@@ -115,8 +112,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 6,
             display: "mov.l @(disp,PC),Rn".to_string(),
@@ -128,8 +124,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 7,
             display: "mov.b @Rm,Rn".to_string(),
@@ -141,8 +136,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 8,
             display: "mov.w @Rm,Rn".to_string(),
@@ -154,8 +148,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 9,
             display: "mov.l @Rm,Rn".to_string(),
@@ -167,8 +160,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 10,
             display: "mov.b Rm,@Rn".to_string(),
@@ -180,8 +172,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 11,
             display: "mov.w Rm,@Rn".to_string(),
@@ -193,8 +184,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 12,
             display: "mov.l Rm,@Rn".to_string(),
@@ -206,8 +196,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 13,
             display: "mov.b @Rm+,Rn".to_string(),
@@ -219,8 +208,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 14,
             display: "mov.w @Rm+,Rn".to_string(),
@@ -232,8 +220,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 15,
             display: "mov.l @Rm+,Rn".to_string(),
@@ -245,8 +232,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 16,
             display: "mov.b Rm,@-Rn".to_string(),
@@ -258,8 +244,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 17,
             display: "mov.w Rm,@-Rn".to_string(),
@@ -271,8 +256,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 18,
             display: "mov.l Rm,@-Rn".to_string(),
@@ -284,8 +268,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 25,
             display: "mov.b @(disp,Rm),R0".to_string(),
@@ -297,8 +280,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 28,
             display: "mov.w @(disp,Rm),R0".to_string(),
@@ -310,8 +292,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 31,
             display: "mov.l @(disp,Rm),Rn".to_string(),
@@ -323,8 +304,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 33,
             display: "mov.b R0,@(disp,Rn)".to_string(),
@@ -336,8 +316,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 35,
             display: "mov.w R0,@(disp,Rn)".to_string(),
@@ -349,8 +328,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 37,
             display: "mov.l Rm,@(disp,Rn)".to_string(),
@@ -362,8 +340,7 @@ lazy_static! {
                 d: 15,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 39,
             display: "mov.b @(R0,Rm),Rn".to_string(),
@@ -375,8 +352,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 40,
             display: "mov.w @(R0,Rm),Rn".to_string(),
@@ -388,8 +364,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 41,
             display: "mov.l @(R0,Rm),Rn".to_string(),
@@ -401,8 +376,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 42,
             display: "mov.b Rm,@(R0,Rn)".to_string(),
@@ -414,8 +388,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 43,
             display: "mov.w Rm,@(R0,Rn)".to_string(),
@@ -427,8 +400,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 44,
             display: "mov.l Rm,@(R0,Rn)".to_string(),
@@ -440,8 +412,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 45,
             display: "mov.b @(disp,GBR),R0".to_string(),
@@ -453,8 +424,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 46,
             display: "mov.w @(disp,GBR),R0".to_string(),
@@ -466,8 +436,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 47,
             display: "mov.l @(disp,GBR),R0".to_string(),
@@ -479,8 +448,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 48,
             display: "mov.b R0,@(disp,GBR)".to_string(),
@@ -492,8 +460,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 49,
             display: "mov.w R0,@(disp,GBR)".to_string(),
@@ -505,8 +472,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 50,
             display: "mov.l R0,@(disp,GBR)".to_string(),
@@ -518,8 +484,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 51,
             display: "movco.l R0,@Rn".to_string(),
@@ -531,8 +496,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 52,
             display: "movli.l @Rm,R0".to_string(),
@@ -544,8 +508,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 53,
             display: "movua.l @Rm,R0".to_string(),
@@ -557,8 +520,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 54,
             display: "movua.l @Rm+,R0".to_string(),
@@ -570,8 +532,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 60,
             display: "movt Rn".to_string(),
@@ -583,8 +544,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 62,
             display: "swap.b Rm,Rn".to_string(),
@@ -596,8 +556,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 63,
             display: "swap.w Rm,Rn".to_string(),
@@ -609,8 +568,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 64,
             display: "xtrct Rm,Rn".to_string(),
@@ -622,8 +580,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 79,
             display: "add Rm,Rn".to_string(),
@@ -635,8 +592,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 80,
             display: "add #imm,Rn".to_string(),
@@ -648,8 +604,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 81,
             display: "addc Rm,Rn".to_string(),
@@ -661,8 +616,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 82,
             display: "addv Rm,Rn".to_string(),
@@ -674,8 +628,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 83,
             display: "cmp/eq #imm,R0".to_string(),
@@ -687,8 +640,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 84,
             display: "cmp/eq Rm,Rn".to_string(),
@@ -700,8 +652,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 85,
             display: "cmp/hs Rm,Rn".to_string(),
@@ -713,8 +664,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 86,
             display: "cmp/ge Rm,Rn".to_string(),
@@ -726,8 +676,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 87,
             display: "cmp/hi Rm,Rn".to_string(),
@@ -739,8 +688,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 88,
             display: "cmp/gt Rm,Rn".to_string(),
@@ -752,8 +700,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 89,
             display: "cmp/pl Rn".to_string(),
@@ -765,8 +712,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 90,
             display: "cmp/pz Rn".to_string(),
@@ -778,8 +724,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 91,
             display: "cmp/str Rm,Rn".to_string(),
@@ -791,8 +736,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 96,
             display: "div0s Rm,Rn".to_string(),
@@ -804,8 +748,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 97,
             display: "div0u".to_string(),
@@ -817,8 +760,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 98,
             display: "div1 Rm,Rn".to_string(),
@@ -830,8 +772,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 101,
             display: "dmuls.l Rm,Rn".to_string(),
@@ -843,8 +784,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 102,
             display: "dmulu.l Rm,Rn".to_string(),
@@ -856,8 +796,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 103,
             display: "dt Rn".to_string(),
@@ -869,8 +808,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 104,
             display: "exts.b Rm,Rn".to_string(),
@@ -882,8 +820,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 105,
             display: "exts.w Rm,Rn".to_string(),
@@ -895,8 +832,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 106,
             display: "extu.b Rm,Rn".to_string(),
@@ -908,8 +844,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 107,
             display: "extu.w Rm,Rn".to_string(),
@@ -921,8 +856,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 108,
             display: "mac.l @Rm+,@Rn+".to_string(),
@@ -934,8 +868,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 109,
             display: "mac.w @Rm+,@Rn+".to_string(),
@@ -947,8 +880,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 110,
             display: "mul.l Rm,Rn".to_string(),
@@ -960,8 +892,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 112,
             display: "muls.w Rm,Rn".to_string(),
@@ -973,8 +904,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 113,
             display: "mulu.w Rm,Rn".to_string(),
@@ -986,8 +916,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 114,
             display: "neg Rm,Rn".to_string(),
@@ -999,8 +928,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 115,
             display: "negc Rm,Rn".to_string(),
@@ -1012,8 +940,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 116,
             display: "sub Rm,Rn".to_string(),
@@ -1025,8 +952,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 117,
             display: "subc Rm,Rn".to_string(),
@@ -1038,8 +964,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 118,
             display: "subv Rm,Rn".to_string(),
@@ -1051,8 +976,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 119,
             display: "and Rm,Rn".to_string(),
@@ -1064,8 +988,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 120,
             display: "and #imm,R0".to_string(),
@@ -1077,8 +1000,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 121,
             display: "and.b #imm,@(R0,GBR)".to_string(),
@@ -1090,8 +1012,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 122,
             display: "not Rm,Rn".to_string(),
@@ -1103,8 +1024,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 123,
             display: "or Rm,Rn".to_string(),
@@ -1116,8 +1036,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 124,
             display: "or #imm,R0".to_string(),
@@ -1129,8 +1048,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 125,
             display: "or.b #imm,@(R0,GBR)".to_string(),
@@ -1142,8 +1060,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 126,
             display: "tas.b @Rn".to_string(),
@@ -1155,8 +1072,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 127,
             display: "tst Rm,Rn".to_string(),
@@ -1168,8 +1084,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 128,
             display: "tst #imm,R0".to_string(),
@@ -1181,8 +1096,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 129,
             display: "tst.b #imm,@(R0,GBR)".to_string(),
@@ -1194,8 +1108,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 130,
             display: "xor Rm,Rn".to_string(),
@@ -1207,8 +1120,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 131,
             display: "xor #imm,R0".to_string(),
@@ -1220,8 +1132,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 132,
             display: "xor.b #imm,@(R0,GBR)".to_string(),
@@ -1233,8 +1144,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 133,
             display: "rotcl Rn".to_string(),
@@ -1246,8 +1156,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 134,
             display: "rotcr Rn".to_string(),
@@ -1259,8 +1168,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 135,
             display: "rotl Rn".to_string(),
@@ -1272,8 +1180,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 136,
             display: "rotr Rn".to_string(),
@@ -1285,8 +1192,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 137,
             display: "shad Rm,Rn".to_string(),
@@ -1298,8 +1204,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 138,
             display: "shal Rn".to_string(),
@@ -1311,8 +1216,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 139,
             display: "shar Rn".to_string(),
@@ -1324,8 +1228,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 140,
             display: "shld Rm,Rn".to_string(),
@@ -1337,8 +1240,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 141,
             display: "shll Rn".to_string(),
@@ -1350,8 +1252,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 142,
             display: "shll2 Rn".to_string(),
@@ -1363,8 +1264,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 143,
             display: "shll8 Rn".to_string(),
@@ -1376,8 +1276,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 144,
             display: "shll16 Rn".to_string(),
@@ -1389,8 +1288,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 145,
             display: "shlr Rn".to_string(),
@@ -1402,8 +1300,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 146,
             display: "shlr2 Rn".to_string(),
@@ -1415,8 +1312,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 147,
             display: "shlr8 Rn".to_string(),
@@ -1428,8 +1324,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 148,
             display: "shlr16 Rn".to_string(),
@@ -1441,8 +1336,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 149,
             display: "bf label".to_string(),
@@ -1454,8 +1348,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 150,
             display: "bf/s label".to_string(),
@@ -1467,8 +1360,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 151,
             display: "bt label".to_string(),
@@ -1480,8 +1372,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 152,
             display: "bt/s label".to_string(),
@@ -1493,8 +1384,7 @@ lazy_static! {
                 d: 255,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 153,
             display: "bra label".to_string(),
@@ -1506,8 +1396,7 @@ lazy_static! {
                 d: 4095,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 154,
             display: "braf Rm".to_string(),
@@ -1519,8 +1408,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 155,
             display: "bsr label".to_string(),
@@ -1532,8 +1420,7 @@ lazy_static! {
                 d: 4095,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 156,
             display: "bsrf Rm".to_string(),
@@ -1545,8 +1432,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 157,
             display: "jmp @Rm".to_string(),
@@ -1558,8 +1444,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 158,
             display: "jsr @Rm".to_string(),
@@ -1571,8 +1456,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 161,
             display: "rts".to_string(),
@@ -1584,8 +1468,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 164,
             display: "clrmac".to_string(),
@@ -1597,8 +1480,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 165,
             display: "clrs".to_string(),
@@ -1610,8 +1492,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 166,
             display: "clrt".to_string(),
@@ -1623,8 +1504,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 167,
             display: "icbi @Rn".to_string(),
@@ -1636,8 +1516,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 169,
             display: "ldc Rm,SR".to_string(),
@@ -1649,8 +1528,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 170,
             display: "ldc.l @Rm+,SR".to_string(),
@@ -1662,8 +1540,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 172,
             display: "ldc Rm,GBR".to_string(),
@@ -1675,8 +1552,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 173,
             display: "ldc.l @Rm+,GBR".to_string(),
@@ -1688,8 +1564,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 174,
             display: "ldc Rm,VBR".to_string(),
@@ -1701,8 +1576,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 175,
             display: "ldc.l @Rm+,VBR".to_string(),
@@ -1714,8 +1588,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 182,
             display: "ldc Rm,SGR".to_string(),
@@ -1727,8 +1600,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 183,
             display: "ldc.l @Rm+,SGR".to_string(),
@@ -1740,8 +1612,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 184,
             display: "ldc Rm,SSR".to_string(),
@@ -1753,8 +1624,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 185,
             display: "ldc.l @Rm+,SSR".to_string(),
@@ -1766,8 +1636,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 186,
             display: "ldc Rm,SPC".to_string(),
@@ -1779,8 +1648,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 187,
             display: "ldc.l @Rm+,SPC".to_string(),
@@ -1792,8 +1660,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 188,
             display: "ldc Rm,DBR".to_string(),
@@ -1805,8 +1672,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 189,
             display: "ldc.l @Rm+,DBR".to_string(),
@@ -1818,8 +1684,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 190,
             display: "ldc Rm,Rn_BANK".to_string(),
@@ -1831,8 +1696,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 191,
             display: "ldc.l @Rm+,Rn_BANK".to_string(),
@@ -1844,8 +1708,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 194,
             display: "lds Rm,MACH".to_string(),
@@ -1857,8 +1720,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 195,
             display: "lds.l @Rm+,MACH".to_string(),
@@ -1870,8 +1732,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 196,
             display: "lds Rm,MACL".to_string(),
@@ -1883,8 +1744,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 197,
             display: "lds.l @Rm+,MACL".to_string(),
@@ -1896,8 +1756,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 198,
             display: "lds Rm,PR".to_string(),
@@ -1909,8 +1768,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 199,
             display: "lds.l @Rm+,PR".to_string(),
@@ -1922,8 +1780,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 212,
             display: "ldtlb".to_string(),
@@ -1935,8 +1792,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 213,
             display: "movca.l R0,@Rn".to_string(),
@@ -1948,8 +1804,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 214,
             display: "nop".to_string(),
@@ -1961,8 +1816,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 215,
             display: "ocbi @Rn".to_string(),
@@ -1974,8 +1828,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 216,
             display: "ocbp @Rn".to_string(),
@@ -1987,8 +1840,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 217,
             display: "ocbwb @Rn".to_string(),
@@ -2000,8 +1852,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 218,
             display: "pref @Rn".to_string(),
@@ -2013,8 +1864,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 219,
             display: "prefi @Rn".to_string(),
@@ -2026,8 +1876,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 221,
             display: "rte".to_string(),
@@ -2039,8 +1888,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 224,
             display: "sets".to_string(),
@@ -2052,8 +1900,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 225,
             display: "sett".to_string(),
@@ -2065,8 +1912,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 226,
             display: "sleep".to_string(),
@@ -2078,8 +1924,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 228,
             display: "stc SR,Rn".to_string(),
@@ -2091,8 +1936,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 229,
             display: "stc.l SR,@-Rn".to_string(),
@@ -2104,8 +1948,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 231,
             display: "stc GBR,Rn".to_string(),
@@ -2117,8 +1960,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 232,
             display: "stc.l GBR,@-Rn".to_string(),
@@ -2130,8 +1972,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 233,
             display: "stc VBR,Rn".to_string(),
@@ -2143,8 +1984,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 234,
             display: "stc.l VBR,@-Rn".to_string(),
@@ -2156,8 +1996,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 241,
             display: "stc SGR,Rn".to_string(),
@@ -2169,8 +2008,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 242,
             display: "stc.l SGR,@-Rn".to_string(),
@@ -2182,8 +2020,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 243,
             display: "stc SSR,Rn".to_string(),
@@ -2195,8 +2032,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 244,
             display: "stc.l SSR,@-Rn".to_string(),
@@ -2208,8 +2044,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 245,
             display: "stc SPC,Rn".to_string(),
@@ -2221,8 +2056,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 246,
             display: "stc.l SPC,@-Rn".to_string(),
@@ -2234,8 +2068,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 247,
             display: "stc DBR,Rn".to_string(),
@@ -2247,8 +2080,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 248,
             display: "stc.l DBR,@-Rn".to_string(),
@@ -2260,8 +2092,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 249,
             display: "stc Rm_BANK,Rn".to_string(),
@@ -2273,8 +2104,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 250,
             display: "stc.l Rm_BANK,@-Rn".to_string(),
@@ -2286,8 +2116,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 251,
             display: "sts MACH,Rn".to_string(),
@@ -2299,8 +2128,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 252,
             display: "sts.l MACH,@-Rn".to_string(),
@@ -2312,8 +2140,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 253,
             display: "sts MACL,Rn".to_string(),
@@ -2325,8 +2152,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 254,
             display: "sts.l MACL,@-Rn".to_string(),
@@ -2338,8 +2164,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 255,
             display: "sts PR,Rn".to_string(),
@@ -2351,8 +2176,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 256,
             display: "sts.l PR,@-Rn".to_string(),
@@ -2364,8 +2188,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 269,
             display: "synco".to_string(),
@@ -2377,8 +2200,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 270,
             display: "trapa #imm".to_string(),
@@ -2390,8 +2212,7 @@ lazy_static! {
                 d: 0,
                 i: 255
             }
-        } ,
-
+        },
         OpCode {
             id: 271,
             display: "fmov FRm,FRn".to_string(),
@@ -2403,8 +2224,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 272,
             display: "fmov.s @Rm,FRn".to_string(),
@@ -2416,8 +2236,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 273,
             display: "fmov.s FRm,@Rn".to_string(),
@@ -2429,8 +2248,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 274,
             display: "fmov.s @Rm+,FRn".to_string(),
@@ -2442,8 +2260,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 275,
             display: "fmov.s FRm,@-Rn".to_string(),
@@ -2455,8 +2272,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 276,
             display: "fmov.s @(R0,Rm),FRn".to_string(),
@@ -2468,8 +2284,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 277,
             display: "fmov.s FRm,@(R0,Rn)".to_string(),
@@ -2481,8 +2296,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 280,
             display: "fmov DRm,DRn".to_string(),
@@ -2494,8 +2308,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 281,
             display: "fmov DRm,XDn".to_string(),
@@ -2507,8 +2320,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 282,
             display: "fmov XDm,DRn".to_string(),
@@ -2520,8 +2332,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 283,
             display: "fmov XDm,XDn".to_string(),
@@ -2533,8 +2344,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 284,
             display: "fmov.d @Rm,DRn".to_string(),
@@ -2546,8 +2356,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 285,
             display: "fmov.d @Rm,XDn".to_string(),
@@ -2559,8 +2368,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 286,
             display: "fmov.d DRm,@Rn".to_string(),
@@ -2572,8 +2380,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 287,
             display: "fmov.d XDm,@Rn".to_string(),
@@ -2585,8 +2392,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 288,
             display: "fmov.d @Rm+,DRn".to_string(),
@@ -2598,8 +2404,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 289,
             display: "fmov.d @Rm+,XDn".to_string(),
@@ -2611,8 +2416,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 290,
             display: "fmov.d DRm,@-Rn".to_string(),
@@ -2624,8 +2428,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 291,
             display: "fmov.d XDm,@-Rn".to_string(),
@@ -2637,8 +2440,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 292,
             display: "fmov.d @(R0,Rm),DRn".to_string(),
@@ -2650,8 +2452,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 293,
             display: "fmov.d @(R0,Rm),XDn".to_string(),
@@ -2663,8 +2464,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 294,
             display: "fmov.d DRm,@(R0,Rn)".to_string(),
@@ -2676,8 +2476,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 295,
             display: "fmov.d XDm,@(R0,Rn)".to_string(),
@@ -2689,8 +2488,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 298,
             display: "fldi0 FRn".to_string(),
@@ -2702,8 +2500,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 299,
             display: "fldi1 FRn".to_string(),
@@ -2715,8 +2512,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 300,
             display: "flds FRm,FPUL".to_string(),
@@ -2728,8 +2524,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 301,
             display: "fsts FPUL,FRn".to_string(),
@@ -2741,8 +2536,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 302,
             display: "fabs FRn".to_string(),
@@ -2754,8 +2548,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 303,
             display: "fneg FRn".to_string(),
@@ -2767,8 +2560,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 304,
             display: "fadd FRm,FRn".to_string(),
@@ -2780,8 +2572,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 305,
             display: "fsub FRm,FRn".to_string(),
@@ -2793,8 +2584,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 306,
             display: "fmul FRm,FRn".to_string(),
@@ -2806,8 +2596,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 307,
             display: "fmac FR0,FRm,FRn".to_string(),
@@ -2819,8 +2608,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 308,
             display: "fdiv FRm,FRn".to_string(),
@@ -2832,8 +2620,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 309,
             display: "fsqrt FRn".to_string(),
@@ -2845,8 +2632,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 310,
             display: "fcmp/eq FRm,FRn".to_string(),
@@ -2858,8 +2644,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 311,
             display: "fcmp/gt FRm,FRn".to_string(),
@@ -2871,8 +2656,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 312,
             display: "float FPUL,FRn".to_string(),
@@ -2884,8 +2668,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 313,
             display: "ftrc FRm,FPUL".to_string(),
@@ -2897,8 +2680,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 314,
             display: "fipr FVm,FVn".to_string(),
@@ -2910,8 +2692,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 315,
             display: "ftrv XMTRX,FVn".to_string(),
@@ -2923,8 +2704,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 316,
             display: "fsrra FRn".to_string(),
@@ -2936,8 +2716,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 317,
             display: "fsca FPUL,DRn".to_string(),
@@ -2949,8 +2728,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 318,
             display: "fabs DRn".to_string(),
@@ -2962,8 +2740,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 319,
             display: "fneg DRn".to_string(),
@@ -2975,8 +2752,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 320,
             display: "fadd DRm,DRn".to_string(),
@@ -2988,8 +2764,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 321,
             display: "fsub DRm,DRn".to_string(),
@@ -3001,8 +2776,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 322,
             display: "fmul DRm,DRn".to_string(),
@@ -3014,8 +2788,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 323,
             display: "fdiv DRm,DRn".to_string(),
@@ -3027,8 +2800,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 324,
             display: "fsqrt DRn".to_string(),
@@ -3040,8 +2812,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 325,
             display: "fcmp/eq DRm,DRn".to_string(),
@@ -3053,8 +2824,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 326,
             display: "fcmp/gt DRm,DRn".to_string(),
@@ -3066,8 +2836,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 327,
             display: "float FPUL,DRn".to_string(),
@@ -3079,8 +2848,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 328,
             display: "ftrc DRm,FPUL".to_string(),
@@ -3092,8 +2860,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 329,
             display: "fcnvds DRm,FPUL".to_string(),
@@ -3105,8 +2872,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 330,
             display: "fcnvsd FPUL,DRn".to_string(),
@@ -3118,8 +2884,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 331,
             display: "lds Rm,FPSCR".to_string(),
@@ -3131,8 +2896,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 332,
             display: "sts FPSCR,Rn".to_string(),
@@ -3144,8 +2908,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 333,
             display: "lds.l @Rm+,FPSCR".to_string(),
@@ -3157,8 +2920,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 334,
             display: "sts.l FPSCR,@-Rn".to_string(),
@@ -3170,8 +2932,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 335,
             display: "lds Rm,FPUL".to_string(),
@@ -3183,8 +2944,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 336,
             display: "sts FPUL,Rn".to_string(),
@@ -3196,8 +2956,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 337,
             display: "lds.l @Rm+,FPUL".to_string(),
@@ -3209,8 +2968,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 338,
             display: "sts.l FPUL,@-Rn".to_string(),
@@ -3222,8 +2980,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 339,
             display: "frchg".to_string(),
@@ -3235,8 +2992,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 340,
             display: "fschg".to_string(),
@@ -3248,8 +3004,7 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
-
+        },
         OpCode {
             id: 341,
             display: "fpchg".to_string(),
@@ -3261,6 +3016,6 @@ lazy_static! {
                 d: 0,
                 i: 0
             }
-        } ,
+        },
     ];
 }

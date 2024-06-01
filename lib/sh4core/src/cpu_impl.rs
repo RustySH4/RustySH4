@@ -273,12 +273,14 @@ impl CPU {
 
     pub fn MOV(&mut self, args: OpCodeArgs) {
         /* Rm -> Rn */
-        todo!()
+        self.registers.r[args.n as usize] = self.registers.r[args.m as usize];
+        self.registers.pc += 2;
     }
 
     pub fn MOVI(&mut self, args: OpCodeArgs) {
         /* imm -> sign extension -> Rn */
-        todo!()
+        self.registers.r[args.n as usize] = CPU::sign_extend(args.i);
+        self.registers.pc += 2;
     }
 
     pub fn MOVA(&mut self, args: OpCodeArgs) {
@@ -329,7 +331,11 @@ impl CPU {
 
     pub fn MOVLS(&mut self, args: OpCodeArgs) {
         /* Rm -> (Rn) */
-        todo!()
+        self.bus.write_bin(
+            self.registers.r[args.n as usize] as usize,
+            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+        );
+        self.registers.pc += 2;
     }
 
     pub fn MOVBP(&mut self, args: OpCodeArgs) {
@@ -348,7 +354,14 @@ impl CPU {
 
     pub fn MOVLP(&mut self, args: OpCodeArgs) {
         /* (Rm) -> Rn, Rm+4 -> Rm */
-        todo!()
+        self.registers.r[args.n as usize] =
+            u32::from_be_bytes(self.bus.read32(args.m as usize).unwrap());
+
+        if args.n != args.m {
+            self.registers.r[args.m as usize] += 4;
+        }
+
+        self.registers.pc += 2;
     }
 
     pub fn MOVBM(&mut self, args: OpCodeArgs) {
@@ -363,7 +376,13 @@ impl CPU {
 
     pub fn MOVLM(&mut self, args: OpCodeArgs) {
         /* Rn-4 -> Rn, Rm -> (Rn) */
-        todo!()
+        self.bus.write_bin(
+            self.registers.r[args.n as usize].wrapping_sub(4) as usize,
+            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+        );
+        self.registers.r[args.n as usize] = self.registers.r[args.n as usize].wrapping_sub(4);
+
+        self.registers.pc += 2;
     }
 
     pub fn MOVBL4(&mut self, args: OpCodeArgs) {
@@ -375,12 +394,34 @@ impl CPU {
         /*
          (disp*2 + Rm) -> sign extension -> R0
         */
-        todo!()
+        let disp = (0x0000000F & args.d as u32);
+
+        self.registers.r[0] = u16::from_be_bytes(
+            self.bus
+                .read16((self.registers.r[args.m as usize] + (disp << 1)) as usize)
+                .unwrap(),
+        ) as u32;
+
+        if self.registers.r[0] & 0x8000 == 0 {
+            self.registers.r[0] &= 0x0000FFFF;
+        } else {
+            self.registers.r[0] |= 0xFFFF0000;
+        }
+
+        self.registers.pc += 2;
     }
 
     pub fn MOVLL4(&mut self, args: OpCodeArgs) {
         /* (disp*4 + Rm) -> Rn */
-        todo!()
+        let disp = (0x0000000F & args.d as u32);
+
+        self.registers.r[args.n as usize] = u32::from_be_bytes(
+            self.bus
+                .read32((self.registers.r[args.m as usize] + (disp << 2)) as usize)
+                .unwrap(),
+        );
+
+        self.registers.pc += 2;
     }
 
     pub fn MOVBS4(&mut self, args: OpCodeArgs) {
@@ -390,12 +431,24 @@ impl CPU {
 
     pub fn MOVWS4(&mut self, args: OpCodeArgs) {
         /* R0 -> (disp*2 + Rn) */
-        todo!()
+        let disp = (0x0000000F & args.d as u32);
+
+        self.bus.write_bin(
+            (self.registers.r[args.n as usize] + (disp << 1)) as usize,
+            self.registers.r[0].to_be_bytes()[2..4].to_vec(),
+        );
+
+        self.registers.pc += 2;
     }
 
     pub fn MOVLS4(&mut self, args: OpCodeArgs) {
         /* Rm -> (disp*4 + Rn) */
-        todo!()
+        let disp = (0x0000000F & args.d as u32);
+        self.bus.write_bin(
+            (self.registers.r[args.n as usize] + (disp << 2)) as usize,
+            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+        );
+        self.registers.pc += 2;
     }
 
     pub fn MOVBL0(&mut self, args: OpCodeArgs) {
@@ -511,12 +564,16 @@ impl CPU {
 
     pub fn ADD(&mut self, args: OpCodeArgs) {
         /* Rn + Rm -> Rn */
-        todo!()
+        self.registers.r[args.n as usize] =
+            self.registers.r[args.n as usize].wrapping_add(self.registers.r[args.m as usize]);
+        self.registers.pc += 2;
     }
 
     pub fn ADDI(&mut self, args: OpCodeArgs) {
         /* Rn + (sign extension)imm */
-        todo!()
+        self.registers.r[args.n as usize] =
+            self.registers.r[args.n as usize].wrapping_add(CPU::sign_extend(args.i));
+        self.registers.pc += 2;
     }
 
     pub fn ADDC(&mut self, args: OpCodeArgs) {
@@ -635,7 +692,15 @@ impl CPU {
 
     pub fn EXTSW(&mut self, args: OpCodeArgs) {
         /* Rm sign-extended from word -> Rn */
-        todo!()
+        self.registers.r[args.n as usize] = self.registers.r[args.m as usize];
+
+        if self.registers.r[args.m as usize] & 0x00008000 == 0 {
+            self.registers.r[args.n as usize] &= 0x0000FFFF;
+        } else {
+            self.registers.r[args.n as usize] |= 0xFFFF0000;
+        }
+
+        self.registers.pc += 2;
     }
 
     pub fn EXTUB(&mut self, args: OpCodeArgs) {
@@ -645,7 +710,10 @@ impl CPU {
 
     pub fn EXTUW(&mut self, args: OpCodeArgs) {
         /* Rm zero-extended from word -> Rn */
-        todo!()
+        self.registers.r[args.n as usize] = self.registers.r[args.m as usize];
+        self.registers.r[args.n as usize] &= 0x0000FFFF;
+
+        self.registers.pc += 2;
     }
 
     pub fn MACL(&mut self, args: OpCodeArgs) {
@@ -943,7 +1011,9 @@ impl CPU {
 
     pub fn RTS(&mut self, args: OpCodeArgs) {
         /* PR -> PC Delayed branch */
-        todo!()
+        let temp: u32 = self.registers.pc;
+        self.registers.pc = self.registers.pr;
+        self.delay_slot(temp as usize + 2);
     }
 
     pub fn CLRMAC(&mut self, args: OpCodeArgs) {
@@ -1092,7 +1162,7 @@ impl CPU {
 
     pub fn NOP(&mut self, args: OpCodeArgs) {
         /* No operation */
-        todo!()
+        self.registers.pc += 2;
     }
 
     pub fn OCBI(&mut self, args: OpCodeArgs) {
