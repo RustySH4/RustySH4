@@ -1,20 +1,18 @@
-use cpu::CPU;
-
-#[macro_use]
-extern crate lazy_static;
-
-mod cpu;
-mod cpu_impl;
-mod memory;
-mod opcodes;
+use sh4core::cpu::CPU;
 
 fn main() {
     let mut cpu = CPU::new();
-    cpu.registers.pc = 0;
-    cpu.bus.write_bin(0, vec![0x7F, 0xF8, 0x64, 0xF3]);
+    let program = vec![
+        0x7F, 0xF8, 0x64, 0xF3, 0xE2, 0x05, 0xE3, 0x03, 0x24, 0x32, 0x14, 0x21, 0x60, 0x42, 0x60,
+        0x0B, 0x70, 0x03, 0x00, 0x0B, 0x7F, 0x08,
+    ];
 
-    cpu.step();
-    cpu.step();
+    cpu.registers.pc = 0;
+    cpu.bus.write_bin(0, program.clone());
+
+    for _ in 0..(program.len() / 2) {
+        cpu.step();
+    }
 
     println!("{}", cpu.registers)
 }

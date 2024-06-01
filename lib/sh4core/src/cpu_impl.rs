@@ -7,15 +7,7 @@ use crate::{
 
 #[allow(non_snake_case)]
 impl CPU {
-    fn sign_extend(x: u16) -> i32 {
-        if (x & 0x80) == 0 {
-            x as i32 & 0x000_000FF
-        } else {
-            x as i32 | 0xFFFF_FF00u32 as i32
-        }
-    }
-
-    fn usign_extend(x: u16) -> u32 {
+    fn sign_extend(x: u16) -> u32 {
         if (x & 0x80) == 0 {
             x as u32 & 0x000_000FF
         } else {
@@ -281,8 +273,7 @@ impl CPU {
 
     pub fn MOV(&mut self, args: OpCodeArgs) {
         /* Rm -> Rn */
-        self.registers.r[args.n as usize] = self.registers.r[args.m as usize];
-        self.registers.pc += 2;
+        todo!()
     }
 
     pub fn MOVI(&mut self, args: OpCodeArgs) {
@@ -520,14 +511,12 @@ impl CPU {
 
     pub fn ADD(&mut self, args: OpCodeArgs) {
         /* Rn + Rm -> Rn */
-        self.registers.r[args.n as usize] += self.registers.r[args.m as usize];
-        self.registers.pc += 2;
+        todo!()
     }
 
     pub fn ADDI(&mut self, args: OpCodeArgs) {
         /* Rn + (sign extension)imm */
-        self.registers.r[args.n as usize] += CPU::usign_extend(args.i);
-        self.registers.pc += 2;
+        todo!()
     }
 
     pub fn ADDC(&mut self, args: OpCodeArgs) {

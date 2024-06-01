@@ -6,6 +6,7 @@ use crate::{memory::MemoryBus, opcodes::OpCode};
 pub struct Registers {
     // TODO: Add BANK0 and BANK1 for privleage modes
     pub r: [u32; 16],
+    pub pr: u32,
     pub pc: u32,
     fpscr: u32,
 }
@@ -14,6 +15,7 @@ impl Default for Registers {
     fn default() -> Self {
         Self {
             r: [0; 16],
+            pr: 0,
             pc: 0xA0000000,
             fpscr: 0x00040001,
         }
@@ -54,5 +56,12 @@ impl CPU {
         } else {
             panic!("Unkown instruction found for: 0x{:x}", ins);
         };
+    }
+
+    pub fn delay_slot(&mut self, addr: usize) {
+        let pc = self.registers.pc;
+        self.registers.pc = addr as u32;
+        self.step();
+        self.registers.pc = pc;
     }
 }

@@ -1,0 +1,7 @@
+[package]
+name = "sh4utils"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sh4core = { path="../sh4core" }
