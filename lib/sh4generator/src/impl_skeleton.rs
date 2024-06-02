@@ -1,6 +1,8 @@
 use genco::prelude::*;
 use scraper::{Html, Selector};
 
+use crate::helper::extract_function_name;
+
 use super::helper::get_nth_cell_of_table;
 
 pub fn generate_impl_empty(html_content: &str) -> rust::Tokens {
@@ -10,12 +12,11 @@ pub fn generate_impl_empty(html_content: &str) -> rust::Tokens {
     let row_selector = Selector::parse(r#"div.col_cont"#).unwrap();
     let mut function_names: Vec<String> = vec![];
     let mut function_abstracts: Vec<String> = vec![];
-    let mut function_idx: Vec<u32> = vec![];
 
-    for (i, row) in document.select(&row_selector).enumerate() {
+    for row in document.select(&row_selector) {
         let arch = get_nth_cell_of_table(&row, 1);
 
-        if !arch.contains("SH4") && !arch.contains("SH4A") {
+        if !arch.contains("SH4") {
             continue;
         }
 
@@ -30,31 +31,10 @@ pub fn generate_impl_empty(html_content: &str) -> rust::Tokens {
             .text()
             .collect::<String>();
 
-        // TODO: Replace this trash with nom or pest parser
-        for line in precode.lines() {
-            if let Some(first) = line.split(' ').next() {
-                if first == "#define" || line.trim().is_empty() {
-                    continue;
-                }
-
-                let mut name: String = if first != "void" {
-                    first.to_string()
-                } else {
-                    line.split(' ').nth(1).unwrap().to_string()
-                };
-
-                let function_abstract = get_nth_cell_of_table(&row, 3);
-                function_abstracts.push(function_abstract);
-
-                function_idx.push(i as u32);
-                if function_names.contains(&name) {
-                    name += "_DUP"
-                }
-
-                function_names.push(name);
-                break;
-            }
-        }
+        let function_abstract = get_nth_cell_of_table(&row, 3);
+        function_abstracts.push(function_abstract);
+        let function_name = extract_function_name(&precode, &function_names);
+        function_names.push(function_name);
     }
 
     quote! {
@@ -76,15 +56,7 @@ pub fn generate_impl_empty(html_content: &str) -> rust::Tokens {
             }
 
             pub fn execute(&mut self, opcode: OpCode) {
-                match opcode.id {
-                    $(for (name, i) in function_names.iter().zip(function_idx.iter()) => $(quote!(
-                        $(*i) => self.$name(opcode.args),$("\n")
-                    )))
-                    _ => {
-                        println!("OUT OF RANGE OPCODE: {:#?}", opcode);
-                        todo!()
-                    }
-                }
+                (opcode.callee)(self, opcode.args)
             }
 
             $(for (name, abst) in function_names.iter().zip(function_abstracts.iter()) => $(quote!(

@@ -10,9 +10,29 @@ pub fn get_nth_cell_of_table(element: &ElementRef, cell_idx: usize) -> String {
     element.select(&selector).next().unwrap().text().collect()
 }
 
-pub fn cleanup_register_names(inp: &str) -> String {
-    // TODO: Replace :d with rust specific format lines
-    inp.to_string()
+pub fn extract_function_name(precode: &str, existing_functions: &Vec<String>) -> String {
+    // TODO: Replace this trash with nom or pest parser
+    for line in precode.lines() {
+        if let Some(first) = line.split(' ').next() {
+            if first == "#define" || line.trim().is_empty() {
+                continue;
+            }
+
+            let mut name: String = if first != "void" {
+                first.to_string()
+            } else {
+                line.split(' ').nth(1).unwrap().to_string()
+            };
+
+            if existing_functions.contains(&name) {
+                name += "_DUP"
+            }
+
+            return name;
+        }
+    }
+
+    return "".to_string();
 }
 
 pub fn save_and_format(path_to_rs: PathBuf, tokens: rust::Tokens) -> Result<(), Error> {

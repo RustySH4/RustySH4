@@ -1,5 +1,3 @@
-use std::{fs, io::Write};
-
 use sh4core::cpu::CPU;
 
 fn main() {
@@ -42,14 +40,6 @@ fn main() {
     //     0x60, 0x13, 0x7E, 0x04, 0x6F, 0xE3, 0x6E, 0xF6, 0x00, 0x0B, 0x00, 0x09,
     // ];
 
-    let mut file = fs::OpenOptions::new()
-        .create(true)
-        .truncate(true)
-        .write(true)
-        .open("my_program.bin")
-        .unwrap();
-    file.write_all(&program).unwrap();
-
     cpu.registers.pc = 0;
     cpu.registers.r[15] = 0x2000;
     cpu.registers.r[14] = 0x1050;
@@ -58,7 +48,6 @@ fn main() {
 
     for _ in 0..(program.len() / 2) {
         cpu.step();
-        println!("{}", cpu.registers);
     }
 
     println!("{}", cpu.registers);
