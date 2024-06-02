@@ -1,0 +1,224 @@
+{
+  "inputFilename": "example.c",
+  "code": 0,
+  "okToCache": true,
+  "timedOut": false,
+  "stdout": [],
+  "stderr": [],
+  "truncated": false,
+  "execTime": "257",
+  "processExecutionResultTime": 0.0017499998211860657,
+  "instructionSet": "sh",
+  "compilationOptions": [
+    "-g",
+    "-o",
+    "output.s",
+    "-c",
+    "-fdiagnostics-color=always",
+    "-ml",
+    "-m4-single-only",
+    "-ffast-math",
+    "-O0",
+    "example.c"
+  ],
+  "downloads": [],
+  "tools": [],
+  "asmSize": 1804,
+  "asm": [
+    { "labels": [], "source": null, "text": "main:" },
+    {
+      "labels": [],
+      "opcodes": ["e6", "2f"],
+      "address": 0,
+      "source": { "file": null, "mainsource": "true", "line": 1 },
+      "text": " mov.l\tr14,@-r15"
+    },
+    {
+      "labels": [],
+      "opcodes": ["f8", "7f"],
+      "address": 2,
+      "source": { "file": null, "mainsource": "true", "line": 1 },
+      "text": " add\t#-8,r15"
+    },
+    {
+      "labels": [],
+      "opcodes": ["f3", "6e"],
+      "address": 4,
+      "source": { "file": null, "mainsource": "true", "line": 1 },
+      "text": " mov\tr15,r14"
+    },
+    {
+      "labels": [],
+      "opcodes": ["e3", "61"],
+      "address": 6,
+      "source": { "file": null, "mainsource": "true", "line": 2 },
+      "text": " mov\tr14,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["c8", "71"],
+      "address": 8,
+      "source": { "file": null, "mainsource": "true", "line": 2 },
+      "text": " add\t#-56,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["02", "e2"],
+      "address": 10,
+      "source": { "file": null, "mainsource": "true", "line": 2 },
+      "text": " mov\t#2,r2"
+    },
+    {
+      "labels": [],
+      "opcodes": ["2f", "11"],
+      "address": 12,
+      "source": { "file": null, "mainsource": "true", "line": 2 },
+      "text": " mov.l\tr2,@(60,r1)"
+    },
+    {
+      "labels": [],
+      "opcodes": ["e3", "61"],
+      "address": 14,
+      "source": { "file": null, "mainsource": "true", "line": 3 },
+      "text": " mov\tr14,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["c8", "71"],
+      "address": 16,
+      "source": { "file": null, "mainsource": "true", "line": 3 },
+      "text": " add\t#-56,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["03", "e2"],
+      "address": 18,
+      "source": { "file": null, "mainsource": "true", "line": 3 },
+      "text": " mov\t#3,r2"
+    },
+    {
+      "labels": [],
+      "opcodes": ["2e", "11"],
+      "address": 20,
+      "source": { "file": null, "mainsource": "true", "line": 3 },
+      "text": " mov.l\tr2,@(56,r1)"
+    },
+    {
+      "labels": [],
+      "opcodes": ["e3", "62"],
+      "address": 22,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " mov\tr14,r2"
+    },
+    {
+      "labels": [],
+      "opcodes": ["c8", "72"],
+      "address": 24,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " add\t#-56,r2"
+    },
+    {
+      "labels": [],
+      "opcodes": ["e3", "61"],
+      "address": 26,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " mov\tr14,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["c8", "71"],
+      "address": 28,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " add\t#-56,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["2f", "52"],
+      "address": 30,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " mov.l\t@(60,r2),r2"
+    },
+    {
+      "labels": [],
+      "opcodes": ["1e", "51"],
+      "address": 32,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " mov.l\t@(56,r1),r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["2c", "31"],
+      "address": 34,
+      "source": { "file": null, "mainsource": "true", "line": 4 },
+      "text": " add\tr2,r1"
+    },
+    {
+      "labels": [],
+      "opcodes": ["13", "60"],
+      "address": 36,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " mov\tr1,r0"
+    },
+    {
+      "labels": [],
+      "opcodes": ["08", "7e"],
+      "address": 38,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " add\t#8,r14"
+    },
+    {
+      "labels": [],
+      "opcodes": ["e3", "6f"],
+      "address": 40,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " mov\tr14,r15"
+    },
+    {
+      "labels": [],
+      "opcodes": ["f6", "6e"],
+      "address": 42,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " mov.l\t@r15+,r14"
+    },
+    {
+      "labels": [],
+      "opcodes": ["0b", "00"],
+      "address": 44,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " rts\t"
+    },
+    {
+      "labels": [],
+      "opcodes": ["09", "00"],
+      "address": 46,
+      "source": { "file": null, "mainsource": "true", "line": 5 },
+      "text": " nop\t"
+    }
+  ],
+  "labelDefinitions": { "main": 1 },
+  "parsingTime": 80,
+  "externalParserUsed": true,
+  "objdumpTime": null,
+  "popularArguments": {
+    "-Wstrict-overflow=<0,5>": {
+      "description": "Warn about optimizations that assume that signed overflow is undefined.",
+      "timesused": 0
+    },
+    "-fwhole-program": {
+      "description": "Perform whole program optimizations.",
+      "timesused": 0
+    },
+    "-fvpt": {
+      "description": "Use expression value profiles in optimizations.",
+      "timesused": 0
+    },
+    "-funreachable-traps": {
+      "description": "Trap on __builtin_unreachable instead of using it for optimization.",
+      "timesused": 0
+    },
+    "-ftree-pre": {
+      "description": "Enable SSA-PRE optimization on trees.",
+      "timesused": 0
+    }
+  }
+}

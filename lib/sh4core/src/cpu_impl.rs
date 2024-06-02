@@ -79,9 +79,9 @@ impl CPU {
 
     pub fn MOVLS(&mut self, args: OpCodeArgs) {
         /* Rm -> (Rn) */
-        self.bus.write_bin(
+        self.bus.write32(
             self.registers.r[args.n as usize] as usize,
-            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+            self.registers.r[args.m as usize],
         );
         self.registers.pc += 2;
     }
@@ -102,8 +102,7 @@ impl CPU {
 
     pub fn MOVLP(&mut self, args: OpCodeArgs) {
         /* (Rm) -> Rn, Rm+4 -> Rm */
-        self.registers.r[args.n as usize] =
-            u32::from_be_bytes(self.bus.read32(args.m as usize).unwrap());
+        self.registers.r[args.n as usize] = self.bus.read32(args.m as usize).unwrap();
 
         if args.n != args.m {
             self.registers.r[args.m as usize] += 4;
@@ -124,9 +123,9 @@ impl CPU {
 
     pub fn MOVLM(&mut self, args: OpCodeArgs) {
         /* Rn-4 -> Rn, Rm -> (Rn) */
-        self.bus.write_bin(
+        self.bus.write32(
             self.registers.r[args.n as usize].wrapping_sub(4) as usize,
-            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+            self.registers.r[args.m as usize],
         );
         self.registers.r[args.n as usize] = self.registers.r[args.n as usize].wrapping_sub(4);
 
@@ -144,11 +143,10 @@ impl CPU {
         */
         let disp = (0x0000000F & args.d as u32);
 
-        self.registers.r[0] = u16::from_be_bytes(
-            self.bus
-                .read16((self.registers.r[args.m as usize] + (disp << 1)) as usize)
-                .unwrap(),
-        ) as u32;
+        self.registers.r[0] = self
+            .bus
+            .read16((self.registers.r[args.m as usize] + (disp << 1)) as usize)
+            .unwrap() as u32;
 
         if self.registers.r[0] & 0x8000 == 0 {
             self.registers.r[0] &= 0x0000FFFF;
@@ -163,11 +161,10 @@ impl CPU {
         /* (disp*4 + Rm) -> Rn */
         let disp = (0x0000000F & args.d as u32);
 
-        self.registers.r[args.n as usize] = u32::from_be_bytes(
-            self.bus
-                .read32((self.registers.r[args.m as usize] + (disp << 2)) as usize)
-                .unwrap(),
-        );
+        self.registers.r[args.n as usize] = self
+            .bus
+            .read32((self.registers.r[args.m as usize] + (disp << 2)) as usize)
+            .unwrap();
 
         self.registers.pc += 2;
     }
@@ -181,9 +178,9 @@ impl CPU {
         /* R0 -> (disp*2 + Rn) */
         let disp = (0x0000000F & args.d as u32);
 
-        self.bus.write_bin(
+        self.bus.write16(
             (self.registers.r[args.n as usize] + (disp << 1)) as usize,
-            self.registers.r[0].to_be_bytes()[2..4].to_vec(),
+            self.registers.r[0] as u16,
         );
 
         self.registers.pc += 2;
@@ -192,10 +189,12 @@ impl CPU {
     pub fn MOVLS4(&mut self, args: OpCodeArgs) {
         /* Rm -> (disp*4 + Rn) */
         let disp = (0x0000000F & args.d as u32);
-        self.bus.write_bin(
+
+        self.bus.write32(
             (self.registers.r[args.n as usize] + (disp << 2)) as usize,
-            self.registers.r[args.m as usize].to_be_bytes().to_vec(),
+            self.registers.r[args.m as usize],
         );
+
         self.registers.pc += 2;
     }
 

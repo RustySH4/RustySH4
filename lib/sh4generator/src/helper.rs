@@ -10,7 +10,7 @@ pub fn get_nth_cell_of_table(element: &ElementRef, cell_idx: usize) -> String {
     element.select(&selector).next().unwrap().text().collect()
 }
 
-pub fn extract_function_name(precode: &str, existing_functions: &Vec<String>) -> String {
+pub fn extract_function_name(precode: &str, existing_functions: &[String]) -> String {
     // TODO: Replace this trash with nom or pest parser
     for line in precode.lines() {
         if let Some(first) = line.split(' ').next() {
@@ -32,7 +32,7 @@ pub fn extract_function_name(precode: &str, existing_functions: &Vec<String>) ->
         }
     }
 
-    return "".to_string();
+    "".to_string()
 }
 
 pub fn save_and_format(path_to_rs: PathBuf, tokens: rust::Tokens) -> Result<(), Error> {

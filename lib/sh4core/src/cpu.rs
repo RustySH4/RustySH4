@@ -48,8 +48,7 @@ impl CPU {
     }
 
     pub fn step(&mut self) {
-        let bytes = self.bus.read16(self.registers.pc as usize).unwrap();
-        let ins = ((bytes[0] as u16) << 8) | bytes[1] as u16;
+        let ins = self.bus.read16(self.registers.pc as usize).unwrap();
 
         if let Some(opcode) = OpCode::decode_instruction(ins) {
             self.execute(opcode)
